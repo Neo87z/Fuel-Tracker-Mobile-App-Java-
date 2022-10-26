@@ -39,10 +39,20 @@ public class Activity_Real_Login extends AppCompatActivity {
                 }else{
                     Boolean CHeckUserPass= DB.CheckUSernamePassword(UsernameDatra,PasswordData);
                     if(CHeckUserPass == true){
+                        Boolean CheckType= DB.CheckType(UsernameDatra);
+                        if(CheckType == true){
+                            Toast.makeText(Activity_Real_Login.this, "Login Sucessfull", Toast.LENGTH_SHORT).show();
+                            Intent intent= new Intent(getApplicationContext(),ListAllPetrolSheds.class);
+                            startActivity(intent);
 
-                        Toast.makeText(Activity_Real_Login.this, "Login Sucessfull", Toast.LENGTH_SHORT).show();
-                        Intent intent= new Intent(getApplicationContext(),ListAllPetrolSheds.class);
-                        startActivity(intent);
+                        }else{
+                            Toast.makeText(Activity_Real_Login.this, "Login Sucessfull", Toast.LENGTH_SHORT).show();
+                            Intent intent= new Intent(getApplicationContext(),OwnerDashBoard.class);
+                            startActivity(intent);
+
+                        }
+
+
                     }else{
                         Toast.makeText(Activity_Real_Login.this, "Check Login Details", Toast.LENGTH_SHORT).show();
 

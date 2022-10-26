@@ -15,14 +15,14 @@ public class DBhelper extends SQLiteOpenHelper {
     public static final String DBNAME="LoginData.db";
 
     public DBhelper(Context context) {
-        super(context,"LoginData.db",null,1);
+        super(context,"LoginDataFinal.db",null,1);
     }
 
 
 
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
-        MyDB.execSQL("create Table users(username TEXT primary key, password TEXT,Fname TEXT, Lname TEXT)");
+        MyDB.execSQL("create Table users(username TEXT primary key, password TEXT,Fname TEXT, Lname TEXT, TypeA TEXT)");
 
 
     }
@@ -39,11 +39,23 @@ public class DBhelper extends SQLiteOpenHelper {
         contentValues.put("password",password);
         contentValues.put("Fname",Fname);
         contentValues.put("Lname",Lname);
+        contentValues.put("TypeA","Admin");
         long result = MyDB.insert("users",null,contentValues);
         if (result == 1){
             return false;
         }else{
             return true;
+        }
+    }
+
+    public Boolean CheckType (String username){
+        SQLiteDatabase MyDB= this.getReadableDatabase();
+        Cursor cursor=MyDB.rawQuery("Select * from users where username= ? and TypeA = 'User'",new String[]{username});
+        if(cursor.getCount() > 0){
+
+            return  true;
+        }else{
+            return false;
         }
     }
 

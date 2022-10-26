@@ -1,6 +1,6 @@
 package com.example.eadfinalproject;
 
-public class Station {
+public class json {
     String ownerName;
     String ownerContactNo;
     String petrolShedNAme;
@@ -21,20 +21,11 @@ public class Station {
     Boolean fulPumping;
     Boolean addFuel;
     Boolean incommingRefilDate;
-    json json;
 
-    public com.example.eadfinalproject.json getJson() {
-        return json;
+    public json() {
     }
 
-    public void setJson(com.example.eadfinalproject.json json) {
-        this.json = json;
-    }
-
-    public Station() {
-    }
-
-    public Station(String ownerName, String ownerContactNo, String petrolShedNAme, String location, String status, String fuel, String lastRefill, String nextRefill, String twoWheel, String threeWheel, String fourWheel, String other, String waitTime, Boolean incmonningTwowheel, Boolean incmonningThreewheel, Boolean incmonningFourwheel, Boolean incmonningOther, Boolean fulPumping, Boolean addFuel, Boolean incommingRefilDate) {
+    public json(String ownerName, String ownerContactNo, String petrolShedNAme, String location, String status, String fuel, String lastRefill, String nextRefill, String twoWheel, String threeWheel, String fourWheel, String other, String waitTime, Boolean incmonningTwowheel, Boolean incmonningThreewheel, Boolean incmonningFourwheel, Boolean incmonningOther, Boolean fulPumping, Boolean addFuel, Boolean incommingRefilDate) {
         this.ownerName = ownerName;
         this.ownerContactNo = ownerContactNo;
         this.petrolShedNAme = petrolShedNAme;

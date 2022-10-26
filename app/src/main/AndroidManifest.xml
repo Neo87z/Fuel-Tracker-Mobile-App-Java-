@@ -72,6 +72,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".OwnerDashBoard"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activity_Real_Login"
             android:exported="false">
             <meta-data
@@ -86,7 +93,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".OwnerDashBoard"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

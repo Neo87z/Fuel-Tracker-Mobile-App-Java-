@@ -2,6 +2,7 @@ package com.example.eadfinalproject;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface OurRetrofit {
@@ -26,6 +27,9 @@ public interface OurRetrofit {
 
     @POST("/api/PetrolShed/UpdateFuel/6354749d491ba33ff756d719")
     Call<OurDataSet> UpdateFuel(@Body Station ourDataSet);
+
+    @POST("/api/PetrolShed/6354749d491ba33ff756d719")
+    Call<Station> GetFuelStationDataByID(@Body Station ourDataSet);
 
 
 
