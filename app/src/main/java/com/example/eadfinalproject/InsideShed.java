@@ -1,3 +1,11 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,7 +44,7 @@ public class InsideShed extends AppCompatActivity {
         LastRefill=findViewById(R.id.textView27);
         NextRefill=findViewById(R.id.textView28);
 
-
+        //API Connection With Retrofit
         Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.2.24:7150")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -46,7 +54,7 @@ public class InsideShed extends AppCompatActivity {
         Call<Station> call= ourRetrofit.GetFuelStationDataByID(ourDataSet);
 
 
-
+        //API Calling and Handling the request
         call.enqueue(new Callback<Station>() {
             @Override
             public void onResponse(Call<Station> call, Response<Station> response) {
@@ -67,11 +75,11 @@ public class InsideShed extends AppCompatActivity {
             }
         });
 
-
+        //Onlcik to Remove the Cards from the fuel Station
         ExitQue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //Api Connection
                 Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.2.24:7150")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
@@ -81,7 +89,7 @@ public class InsideShed extends AppCompatActivity {
                 Call<OurDataSet> call= ourRetrofit.ExitQueueData(ourDataSet);
 
 
-
+                //API Calling and Handling the request
                 call.enqueue(new Callback<OurDataSet>() {
                     @Override
                     public void onResponse(Call<OurDataSet> call, Response<OurDataSet> response) {
@@ -102,6 +110,7 @@ public class InsideShed extends AppCompatActivity {
             }
         });
 
+        //Confirm Pump Intent
         ConfirmPump.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

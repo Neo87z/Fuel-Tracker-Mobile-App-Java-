@@ -1,3 +1,11 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +38,7 @@ public class ManageFuelStation extends AppCompatActivity {
         Address=findViewById(R.id.EmailLastNameInputEditText1);
         AddFuelStation=findViewById(R.id.button);
 
+        //Onclick function to Add Fuel Station
         AddFuelStation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,6 +46,7 @@ public class ManageFuelStation extends AppCompatActivity {
                 String RegNumberTest = RegNumber.getText().toString();
                 String ImageURLText = ImageURL.getText().toString();
                 String AddressText = Address.getText().toString();
+                //API connection with retrofit
                 Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.2.24:7150")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
@@ -46,7 +56,7 @@ public class ManageFuelStation extends AppCompatActivity {
                 Call<OurDataSet> call= ourRetrofit.UpdateShedData(ourDataSet);
 
 
-
+                //Calling the API and handling the request
                 call.enqueue(new Callback<OurDataSet>() {
                     @Override
                     public void onResponse(Call<OurDataSet> call, Response<OurDataSet> response) {

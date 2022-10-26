@@ -1,3 +1,11 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,22 +36,23 @@ public class ConfrimPump extends AppCompatActivity {
 
         PumpValue=findViewById(R.id.NameInputEditText);
 
-
+        //On click Listener to Confirm the Fuel Pump
         ConfirmPump.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Getting User Inputs
                 String FuelCount=PumpValue.getText().toString();
-
+                //API Connection With Retrofit
                 Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.2.24:7150")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
                 OurRetrofit ourRetrofit = retrofit.create(OurRetrofit.class);
-
+                //Setting Data to Send to Backend
                 Station ourDataSet= new Station("RegNumberTest","ImageURLText","StationNAme","AddressText","Active",FuelCount,"0","0","0","0","0","0","0",false,false,false,false,true,false,false);
                 Call<OurDataSet> call= ourRetrofit.UpdateFuel(ourDataSet);
 
 
-
+                //Calling the API and Handling the Request
                 call.enqueue(new Callback<OurDataSet>() {
                     @Override
                     public void onResponse(Call<OurDataSet> call, Response<OurDataSet> response) {

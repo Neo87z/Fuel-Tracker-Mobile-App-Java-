@@ -1,3 +1,11 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,11 +50,12 @@ public class ActivityVehcicleInfo extends AppCompatActivity {
         VehModel=findViewById(R.id.LastNameInputEditText);
         VehColor=findViewById(R.id.EmailLastNameInputEditText);
         CreateAccount=findViewById(R.id.button);
+        //On Click Listener to Create the Account
         CreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
+                //Getting Extras from the previous intent
                 String fname=extras.getString("EXTRA_SESSION_USER");
                 String sender=extras.getString("EXTRA_SESSION_FNAME");;
                 String message=extras.getString("EXTRA_SESSION_LNAME");;
@@ -55,6 +64,9 @@ public class ActivityVehcicleInfo extends AppCompatActivity {
                 String color=VehColor.getText().toString();
                 String type=autoCompleteTextView.getText().toString();
 
+
+
+                //ApI Connection and Validation With Retrofit
                 Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.2.24:7150")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
@@ -88,8 +100,5 @@ public class ActivityVehcicleInfo extends AppCompatActivity {
     }
 
 
-    void SendDataTOBackend(){
 
-
-    }
 }

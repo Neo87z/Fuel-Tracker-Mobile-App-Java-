@@ -1,3 +1,11 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,14 +51,8 @@ public class LoginActivity extends AppCompatActivity {
         Register=(Button) findViewById(R.id.button);
         DB= new DBhelper(this);
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(LoginActivity.this, "Testtttt", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-
+        //Onclick toRegister USer. Initial Stage
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

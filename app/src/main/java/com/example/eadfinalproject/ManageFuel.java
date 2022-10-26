@@ -1,3 +1,11 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,20 +36,23 @@ public class ManageFuel extends AppCompatActivity {
 
         FuelAmout=findViewById(R.id.NameInputEditText);
         B1=findViewById(R.id.button);
+        //On click furnction to Remove the Fuel After Pump
         B1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Getting the Fuel Pump Amount
                 String FuelCount=FuelAmout.getText().toString();
+                //API Connection With Retrofit
                 Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.2.24:7150")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
                 OurRetrofit ourRetrofit = retrofit.create(OurRetrofit.class);
-
+                //Setting the Data To Send to backend
                 Station ourDataSet= new Station("RegNumberTest","ImageURLText","StationNAme","AddressText","Active",FuelCount,"0","0","0","0","0","0","0",false,false,false,false,false,false,false);
                 Call<OurDataSet> call= ourRetrofit.updateStationFuel(ourDataSet);
 
 
-
+                //Calling the APi and Handling the request
                 call.enqueue(new Callback<OurDataSet>() {
                     @Override
                     public void onResponse(Call<OurDataSet> call, Response<OurDataSet> response) {

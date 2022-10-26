@@ -1,3 +1,11 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 
 import retrofit2.Call;
@@ -5,6 +13,8 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
+
+//Interface for Connecting to The Backend
 public interface OurRetrofit {
     @POST("/api/Students")
     Call<OurDataSet> PostData(@Body OurDataSet ourDataSet);

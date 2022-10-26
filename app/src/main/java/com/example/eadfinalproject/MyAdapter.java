@@ -1,3 +1,11 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 import static androidx.core.content.ContextCompat.startActivity;
 
@@ -19,6 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private Context context;
     private ArrayList name_id, email_id, age_id;
 
+    //Adapter to Manage the Listign of Fuel Station
     public MyAdapter(Context context, ArrayList name_id, ArrayList email_id, ArrayList age_id) {
         this.context = context;
         this.name_id = name_id;
@@ -30,7 +39,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-
+        //Infalitng the Recycler Viwer layout
         View v = LayoutInflater.from(context).inflate(R.layout.petrollistview,parent,false);
 
 

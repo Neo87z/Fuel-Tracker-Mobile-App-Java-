@@ -1,3 +1,11 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 
 import android.content.ContentValues;
@@ -14,12 +22,14 @@ public class DBhelper extends SQLiteOpenHelper {
 
     public static final String DBNAME="LoginData.db";
 
+
+    //Setting the SQLLite DB Name and Intilalzing
     public DBhelper(Context context) {
         super(context,"LoginDataFinal.db",null,1);
     }
 
 
-
+    //Creating SQLLite DB
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("create Table users(username TEXT primary key, password TEXT,Fname TEXT, Lname TEXT, TypeA TEXT)");
@@ -27,11 +37,14 @@ public class DBhelper extends SQLiteOpenHelper {
 
     }
 
+    //Dropping the Table if Exists Fucntion
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
         MyDB.execSQL("drop Table if exists users");
     }
 
+
+    //Function To Insert Data To The SqlLite DB
     public Boolean insertData(String username, String password,String Fname,String Lname){
         SQLiteDatabase MyDB= this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -48,6 +61,7 @@ public class DBhelper extends SQLiteOpenHelper {
         }
     }
 
+    //Function Check the user Type
     public Boolean CheckType (String username){
         SQLiteDatabase MyDB= this.getReadableDatabase();
         Cursor cursor=MyDB.rawQuery("Select * from users where username= ? and TypeA = 'User'",new String[]{username});
@@ -59,6 +73,7 @@ public class DBhelper extends SQLiteOpenHelper {
         }
     }
 
+    //Function Check The Username
     public Boolean checkUserName (String username){
         SQLiteDatabase MyDB= this.getReadableDatabase();
         Cursor cursor=MyDB.rawQuery("Select * from users where username= ?",new String[]{username});
@@ -69,6 +84,7 @@ public class DBhelper extends SQLiteOpenHelper {
         }
     }
 
+    //Function Check the Password
     public Boolean CheckUSernamePassword(String username, String password){
         System.out.println("Heree");
         SQLiteDatabase MyDB= this.getReadableDatabase();

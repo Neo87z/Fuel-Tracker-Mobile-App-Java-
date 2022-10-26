@@ -1,3 +1,11 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +26,8 @@ public class Activity_Real_Login extends AppCompatActivity {
     Button Login;
     DBhelper DB;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,12 +38,16 @@ public class Activity_Real_Login extends AppCompatActivity {
         Login=(Button) findViewById(R.id.button);
         DB= new DBhelper(this);
 
+
+        //Onlick Listener to Validate The User Login Details
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Gtetting Username and Password and settinmg to a String
                 String UsernameDatra= USerName.getText().toString();
                 String PasswordData= Password.getText().toString();
 
+                //Logic to Check if the Provided details are valid
                 if (UsernameDatra.equals("") || PasswordData.equals("")){
                     Toast.makeText(Activity_Real_Login.this, "Please Enter All The Fiels", Toast.LENGTH_SHORT).show();
                 }else{

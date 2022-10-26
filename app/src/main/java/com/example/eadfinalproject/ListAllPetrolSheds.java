@@ -1,3 +1,11 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,6 +49,7 @@ public class ListAllPetrolSheds extends AppCompatActivity {
         ImageVutton=findViewById(R.id.imageView2);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         displaydata();
+
         ImageVutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,9 +90,9 @@ public class ListAllPetrolSheds extends AppCompatActivity {
     private void displaydata()
     {
 
-                name.add("Malabe Petrol Station");
-                email.add("24l");
-                age.add("2022/01/22");
+        name.add("Malabe Petrol Station");
+        email.add("24l");
+        age.add("2022/01/22");
         name.add("Malabe Petrol Station");
         email.add("24l");
         age.add("2022/01/22");

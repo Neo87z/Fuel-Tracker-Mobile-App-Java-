@@ -1,5 +1,14 @@
+/*
+ * //**
+ *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ * Copyright(c) 2022 . All Rights reserved.
+ *  This project was done for the EAD Assignment  1
+ * /
+ */
+
 package com.example.eadfinalproject;
 
+//Main Model To Handle Station Data
 public class Station {
     String ownerName;
     String ownerContactNo;
@@ -21,15 +30,11 @@ public class Station {
     Boolean fulPumping;
     Boolean addFuel;
     Boolean incommingRefilDate;
-    json json;
 
-    public com.example.eadfinalproject.json getJson() {
-        return json;
-    }
 
-    public void setJson(com.example.eadfinalproject.json json) {
-        this.json = json;
-    }
+
+
+
 
     public Station() {
     }
