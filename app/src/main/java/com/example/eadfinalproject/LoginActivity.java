@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(intent);
 
                         }else{
-                            Toast.makeText(LoginActivity.this,"Error Occured Try Again",Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this,"Error Occurred Try Again",Toast.LENGTH_LONG).show();
                         }
                     }else{
                         Toast.makeText(LoginActivity.this,"Email Address Already Exists",Toast.LENGTH_LONG).show();

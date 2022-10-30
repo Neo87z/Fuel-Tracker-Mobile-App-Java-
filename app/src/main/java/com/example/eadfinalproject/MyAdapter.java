@@ -27,7 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private Context context;
     private ArrayList name_id, email_id, age_id;
 
-    //Adapter to Manage the Listign of Fuel Station
+    //Adapter to Manage the Listing of Fuel Station
     public MyAdapter(Context context, ArrayList name_id, ArrayList email_id, ArrayList age_id) {
         this.context = context;
         this.name_id = name_id;
@@ -39,7 +39,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        //Infalitng the Recycler Viwer layout
+        //Inflating the Recycler Viewer layout
         View v = LayoutInflater.from(context).inflate(R.layout.petrollistview,parent,false);
 
 

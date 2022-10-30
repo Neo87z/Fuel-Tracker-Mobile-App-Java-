@@ -1,6 +1,6 @@
 /*
  * //**
- *  Created By Dulanji Vithnage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
+ *  Created By Dulanji Vithanage (IT19142142), Imalshi Dias (IT19183978), Pawani Weerasinghe (IT19133546).
  * Copyright(c) 2022 . All Rights reserved.
  *  This project was done for the EAD Assignment  1
  * /
@@ -76,7 +76,7 @@ public class ActivityVehcicleInfo extends AppCompatActivity {
                 call.enqueue(new Callback<OurDataSet>() {
                     @Override
                     public void onResponse(Call<OurDataSet> call, Response<OurDataSet> response) {
-                        Toast.makeText(ActivityVehcicleInfo.this, "Account Sucessfully Created", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityVehcicleInfo.this, "Account Successfully Created", Toast.LENGTH_SHORT).show();
 
                         Intent intent= new Intent(getApplicationContext(),ListAllPetrolSheds.class);
                         startActivity(intent);

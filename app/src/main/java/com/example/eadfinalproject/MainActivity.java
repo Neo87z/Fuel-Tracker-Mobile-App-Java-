@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         SingnIn=findViewById(R.id.button2);
         SignUp=findViewById(R.id.button3);
-        //Onclick to redirect User to Signin screen
+        //Onclick to redirect User to Sign In screen
         SingnIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

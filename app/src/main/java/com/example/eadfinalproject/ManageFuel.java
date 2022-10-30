@@ -36,7 +36,7 @@ public class ManageFuel extends AppCompatActivity {
 
         FuelAmout=findViewById(R.id.NameInputEditText);
         B1=findViewById(R.id.button);
-        //On click furnction to Remove the Fuel After Pump
+        //On click function to Remove the Fuel After Pump
         B1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

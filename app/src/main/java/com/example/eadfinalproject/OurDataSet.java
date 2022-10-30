@@ -9,7 +9,7 @@
 package com.example.eadfinalproject;
 
 
-//Main Dataset To Haddle the Customers
+//Main Dataset To Handle the Customers
 public class OurDataSet {
     String fname;
     String sender;

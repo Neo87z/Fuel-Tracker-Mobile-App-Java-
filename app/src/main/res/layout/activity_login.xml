@@ -15,11 +15,11 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/signup5" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/sign" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/PasswwordLastNameInputLayout"
@@ -32,14 +32,16 @@
         app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         app:layout_constraintVertical_bias="0.814"
-        app:startIconDrawable="@drawable/rect_rounded_button">
+        app:startIconDrawable="@drawable/ic_baseline_password_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/PasswwordLastNameInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="37dp"
+            android:inputType="textPassword"
             tools:layout_editor_absoluteY="550dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.696"
-        app:startIconDrawable="@drawable/rect_rounded_button">
+        app:startIconDrawable="@drawable/ic_baseline_email_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/EmailLastNameInputEditText"
@@ -78,13 +80,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.469"
-        app:startIconDrawable="@drawable/rect_rounded_button">
+        app:startIconDrawable="@drawable/ic_baseline_person_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/NameInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             tools:layout_editor_absoluteX="37dp"
             tools:layout_editor_absoluteY="319dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -101,7 +103,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.581"
-        app:startIconDrawable="@drawable/rect_rounded_button">
+        app:startIconDrawable="@drawable/ic_baseline_person_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/LastNameInputEditText"

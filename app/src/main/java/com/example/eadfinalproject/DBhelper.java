@@ -23,7 +23,7 @@ public class DBhelper extends SQLiteOpenHelper {
     public static final String DBNAME="LoginData.db";
 
 
-    //Setting the SQLLite DB Name and Intilalzing
+    //Setting the SQLLite DB Name and Initializing
     public DBhelper(Context context) {
         super(context,"LoginDataFinal.db",null,1);
     }
@@ -37,7 +37,7 @@ public class DBhelper extends SQLiteOpenHelper {
 
     }
 
-    //Dropping the Table if Exists Fucntion
+    //Dropping the Table if Exists Function
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
         MyDB.execSQL("drop Table if exists users");
@@ -52,7 +52,7 @@ public class DBhelper extends SQLiteOpenHelper {
         contentValues.put("password",password);
         contentValues.put("Fname",Fname);
         contentValues.put("Lname",Lname);
-        contentValues.put("TypeA","Admin");
+        contentValues.put("TypeA","User");
         long result = MyDB.insert("users",null,contentValues);
         if (result == 1){
             return false;

@@ -28,7 +28,7 @@ public class OwnerDashBoard extends AppCompatActivity {
         AddFuel=findViewById(R.id.AddFuel);
         EditFuel=findViewById(R.id.EditFuel);
 
-        //Onlcik to Add Fuel Station Screen
+        //Onclick to Add Fuel Station Screen
         AddStation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +38,7 @@ public class OwnerDashBoard extends AppCompatActivity {
             }
         });
 
-        //Onlcik to Manage Fuel Station Screen
+        //Onclick to Manage Fuel Station Screen
         ManageStation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,7 +47,7 @@ public class OwnerDashBoard extends AppCompatActivity {
 
             }
         });
-        //Onlcik to Add Fuel  Screen
+        //Onclick to Add Fuel  Screen
         AddFuel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +56,7 @@ public class OwnerDashBoard extends AppCompatActivity {
 
             }
         });
-        //Onlcik to Edit Fuel  Screen
+        //Onclick to Edit Fuel  Screen
         EditFuel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

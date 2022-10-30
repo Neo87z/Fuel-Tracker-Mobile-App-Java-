@@ -17,6 +17,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.time.LocalTime;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -24,10 +27,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import java.time.LocalDateTime;
+import java.util.Locale;
+import java.time.format.DateTimeFormatter;
 
 
 public class InsideShed extends AppCompatActivity {
-    TextView TwoWheel,ThreeWheel,FourWheel,Other,Fuel,Location,LastRefill,NextRefill;
+    TextView TwoWheel,ThreeWheel,FourWheel,Other,Fuel,Location,LastRefill,NextRefill,TobePummoped,ArrivalTime,PumpedVeh;
     Button ExitQue,ConfirmPump;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,12 @@ public class InsideShed extends AppCompatActivity {
         Fuel=findViewById(R.id.textView23);
         LastRefill=findViewById(R.id.textView27);
         NextRefill=findViewById(R.id.textView28);
+        TobePummoped=findViewById(R.id.textView32);
+        ArrivalTime=findViewById(R.id.textView8);
+        PumpedVeh=findViewById(R.id.textView30);
+
+
+
 
         //API Connection With Retrofit
         Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.2.24:7150")
@@ -62,10 +74,18 @@ public class InsideShed extends AppCompatActivity {
                 ThreeWheel.setText(response.body().threeWheel);
                 FourWheel.setText(response.body().fourWheel);
                 Other.setText(response.body().other);
-                Fuel.setText(response.body().fuel);
+                Fuel.setText(response.body().fuel+" Litres Remaining");
                 Location.setText(response.body().location);
                 LastRefill.setText("Last Refill On :"+response.body().lastRefill);
-                NextRefill.setText("Next Scheduled Refill On :"+response.body().nextRefill);
+                NextRefill.setText("Next Scheduled Refill On : "+response.body().nextRefill);
+                Date DateCurrent= Calendar.getInstance().getTime();
+                PumpedVeh.setText(response.body().waitTime+" Vehicles");
+
+                ArrivalTime.setText(DateCurrent.toString());
+                //int x=0;
+                //x=Integer.parseInt(response.body().twoWheel)+Integer.parseInt(response.body().threeWheel)+Integer.parseInt(response.body().fourWheel)+Integer.parseInt(response.body().other);
+                TobePummoped.setText(response.body().threeWheel+" Vehicles");
+
             }
 
             @Override
@@ -75,7 +95,7 @@ public class InsideShed extends AppCompatActivity {
             }
         });
 
-        //Onlcik to Remove the Cards from the fuel Station
+        //Onclick to Remove the Cards from the fuel Station
         ExitQue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

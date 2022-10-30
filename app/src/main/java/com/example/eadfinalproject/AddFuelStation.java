@@ -58,11 +58,11 @@ public class AddFuelStation extends AppCompatActivity {
                 Call<OurDataSet> call= ourRetrofit.PostShedData(ourDataSet);
 
 
-                //Callig the API and handling the request
+                //Calling the API and handling the request
                 call.enqueue(new Callback<OurDataSet>() {
                     @Override
                     public void onResponse(Call<OurDataSet> call, Response<OurDataSet> response) {
-                        Toast.makeText(AddFuelStation.this, "Station Sucuessfully Added", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddFuelStation.this, "Station Successfully Added", Toast.LENGTH_SHORT).show();
 
                         Intent intent= new Intent(getApplicationContext(),OwnerDashBoard.class);
                         startActivity(intent);
